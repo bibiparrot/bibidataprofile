@@ -1,0 +1,10 @@
+loguru 
+ydata-profiling 
+pandas 
+tables 
+openpyxl 
+optbinning 
+lightgbm 
+jieba 
+pyqt5 
+python-calamine
