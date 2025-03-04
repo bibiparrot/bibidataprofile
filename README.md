@@ -10,27 +10,27 @@ EDA tool for machine learning!
 
 ### YData-Profiling
 
-![UI](docs\ui.png)
+![UI](docs/ui.png)
 
 
 
-![YData-Profile](docs\ydata_profile.png)
-
-
-
-
-
-![Variable Analysis](docs\variable_analysis.png)
+![YData-Profile](docs/ydata_profile.png)
 
 
 
 
 
-![Profile Report](docs\profile_report.png)
+![Variable Analysis](docs/variable_analysis.png)
 
 
 
-![Event Rate](docs\event_rate.png)
+
+
+![Profile Report](docs/profile_report.png)
+
+
+
+![Event Rate](docs/event_rate.png)
 
 
 
