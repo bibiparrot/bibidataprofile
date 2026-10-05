@@ -1,6 +1,6 @@
 [project]
 name = "bibidataprofile"
-version = "0.2.2"
+version = "0.2.3"
 description = "An Exploratory Data Analysis (EDA) tool named BibiDataProfile"
 authors = [
     {name = "Chunqi SHI", email = "chunqishi@gmail.com"},

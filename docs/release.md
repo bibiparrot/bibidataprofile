@@ -84,8 +84,8 @@ workflow_dispatch 构建并验证完整附件，不发布 Release。
 提交并推送本次改动后，在已登录且具有仓库写权限的环境执行：
 
 ```powershell
-git tag v0.2.2
-git push bibiparrot v0.2.2
+git tag v0.2.3
+git push bibiparrot v0.2.3
 ```
 
 发布仓库为 `https://github.com/bibiparrot/bibidataprofile`。

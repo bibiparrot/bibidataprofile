@@ -83,6 +83,7 @@ jobs:
         if: runner.os == 'macOS'
         run: bash scripts/prepare-macos-runtime.sh
       - name: Install frontend and prepare embedded runtime
+        shell: bash
         run: |
           npm ci
           npm run application

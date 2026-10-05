@@ -68,15 +68,15 @@
 
 ## 下载适合你的版本
 
-所有文件从本仓库的 [Releases](https://github.com/bibiparrot/bibidataprofile/releases/latest) 下载。以下为 **v0.2.2** 的直接入口：
+所有文件从本仓库的 [Releases](https://github.com/bibiparrot/bibidataprofile/releases/latest) 下载。以下为 **v0.2.3** 的直接入口：
 
 | 系统与架构 | 推荐安装包 | 其他格式 |
 | --- | --- | --- |
-| Windows 10/11 · x86_64 | [EXE 安装版](https://github.com/bibiparrot/bibidataprofile/releases/download/v0.2.2/bibidataprofile-0.2.2-windows-x86_64_setup.exe) | [MSI 安装版](https://github.com/bibiparrot/bibidataprofile/releases/download/v0.2.2/bibidataprofile-0.2.2-windows-x86_64_setup.msi) · [便携 ZIP](https://github.com/bibiparrot/bibidataprofile/releases/download/v0.2.2/bibidataprofile-0.2.2-windows-x86_64_portable.zip) |
-| macOS · Apple Silicon（M 系列） | [arm64 DMG](https://github.com/bibiparrot/bibidataprofile/releases/download/v0.2.2/bibidataprofile-0.2.2-arm64-macOS.dmg) | [PKG](https://github.com/bibiparrot/bibidataprofile/releases/download/v0.2.2/bibidataprofile-0.2.2-arm64-macOS.pkg) · [ZIP](https://github.com/bibiparrot/bibidataprofile/releases/download/v0.2.2/bibidataprofile-0.2.2-arm64-macOS.zip) |
-| macOS · Intel | [x86_64 DMG](https://github.com/bibiparrot/bibidataprofile/releases/download/v0.2.2/bibidataprofile-0.2.2-x86_64-macOS.dmg) | [PKG](https://github.com/bibiparrot/bibidataprofile/releases/download/v0.2.2/bibidataprofile-0.2.2-x86_64-macOS.pkg) · [ZIP](https://github.com/bibiparrot/bibidataprofile/releases/download/v0.2.2/bibidataprofile-0.2.2-x86_64-macOS.zip) |
-| Linux · aarch64 / ARM64 | [AppImage](https://github.com/bibiparrot/bibidataprofile/releases/download/v0.2.2/bibidataprofile-0.2.2-linux-aarch64.AppImage) | [RPM](https://github.com/bibiparrot/bibidataprofile/releases/download/v0.2.2/bibidataprofile-0.2.2-linux-aarch64.rpm) · [tar.gz](https://github.com/bibiparrot/bibidataprofile/releases/download/v0.2.2/bibidataprofile-0.2.2-linux-aarch64.tar.gz) |
-| Linux · x86_64 | [AppImage](https://github.com/bibiparrot/bibidataprofile/releases/download/v0.2.2/bibidataprofile-0.2.2-linux-x86_64.AppImage) | [RPM](https://github.com/bibiparrot/bibidataprofile/releases/download/v0.2.2/bibidataprofile-0.2.2-linux-x86_64.rpm) · [tar.gz](https://github.com/bibiparrot/bibidataprofile/releases/download/v0.2.2/bibidataprofile-0.2.2-linux-x86_64.tar.gz) |
+| Windows 10/11 · x86_64 | [EXE 安装版](https://github.com/bibiparrot/bibidataprofile/releases/download/v0.2.3/bibidataprofile-0.2.3-windows-x86_64_setup.exe) | [MSI 安装版](https://github.com/bibiparrot/bibidataprofile/releases/download/v0.2.3/bibidataprofile-0.2.3-windows-x86_64_setup.msi) · [便携 ZIP](https://github.com/bibiparrot/bibidataprofile/releases/download/v0.2.3/bibidataprofile-0.2.3-windows-x86_64_portable.zip) |
+| macOS · Apple Silicon（M 系列） | [arm64 DMG](https://github.com/bibiparrot/bibidataprofile/releases/download/v0.2.3/bibidataprofile-0.2.3-arm64-macOS.dmg) | [PKG](https://github.com/bibiparrot/bibidataprofile/releases/download/v0.2.3/bibidataprofile-0.2.3-arm64-macOS.pkg) · [ZIP](https://github.com/bibiparrot/bibidataprofile/releases/download/v0.2.3/bibidataprofile-0.2.3-arm64-macOS.zip) |
+| macOS · Intel | [x86_64 DMG](https://github.com/bibiparrot/bibidataprofile/releases/download/v0.2.3/bibidataprofile-0.2.3-x86_64-macOS.dmg) | [PKG](https://github.com/bibiparrot/bibidataprofile/releases/download/v0.2.3/bibidataprofile-0.2.3-x86_64-macOS.pkg) · [ZIP](https://github.com/bibiparrot/bibidataprofile/releases/download/v0.2.3/bibidataprofile-0.2.3-x86_64-macOS.zip) |
+| Linux · aarch64 / ARM64 | [AppImage](https://github.com/bibiparrot/bibidataprofile/releases/download/v0.2.3/bibidataprofile-0.2.3-linux-aarch64.AppImage) | [RPM](https://github.com/bibiparrot/bibidataprofile/releases/download/v0.2.3/bibidataprofile-0.2.3-linux-aarch64.rpm) · [tar.gz](https://github.com/bibiparrot/bibidataprofile/releases/download/v0.2.3/bibidataprofile-0.2.3-linux-aarch64.tar.gz) |
+| Linux · x86_64 | [AppImage](https://github.com/bibiparrot/bibidataprofile/releases/download/v0.2.3/bibidataprofile-0.2.3-linux-x86_64.AppImage) | [RPM](https://github.com/bibiparrot/bibidataprofile/releases/download/v0.2.3/bibidataprofile-0.2.3-linux-x86_64.rpm) · [tar.gz](https://github.com/bibiparrot/bibidataprofile/releases/download/v0.2.3/bibidataprofile-0.2.3-linux-x86_64.tar.gz) |
 
 安装版按提示安装；Windows 便携版解压后运行 `bibidataprofile.exe`，并保留同目录的 `uv.exe`。macOS ZIP 解压后打开 `.app`；Linux tar.gz 解压后运行其中的 `AppRun`，AppImage 需要赋予执行权限。
 
@@ -96,7 +96,7 @@
 从 Release 下载 wheel 后安装：
 
 ```bash
-python -m pip install bibidataprofile-0.2.2-py3-none-any.whl
+python -m pip install bibidataprofile-0.2.3-py3-none-any.whl
 python -m bibidataprofile
 ```
 

@@ -1,4 +1,4 @@
-# BibiDataProfile 0.2.2
+# BibiDataProfile 0.2.3
 
 从数据导入到画像、变量分箱、模型训练与批量预测，在一个桌面工作台完成。
 
