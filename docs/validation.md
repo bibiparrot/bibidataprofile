@@ -10,6 +10,8 @@
 - Rust 格式与严格 Clippy、TypeScript/Vite 生产构建通过。
 - CI 在五种原生架构上安装 wheel 运行分析测试，并检查包内容。最后强制校验
   15 个桌面包、wheel 和 SHA-256 完整性，全部成功后发布。
+- v0.2.3 发布工作流（37297066500）全部通过：Windows x86_64、macOS arm64/
+  x86_64、Linux aarch64/x86_64，所有 15 种原生包和 wheel 已上传。
 - macOS 附带 OpenMP，PKG 检查载荷、ZIP 检查运行文件；Linux tar.gz 保存
   完整 AppDir 和 AppRun，Windows portable ZIP 检查应用与 uv。
 

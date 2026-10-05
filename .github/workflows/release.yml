@@ -144,5 +144,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           body_path: docs/release-notes.md
-          files: release-assets/*
+          files: |
+            release-assets/bibidataprofile-*
+            release-assets/SHA256SUMS.txt
           fail_on_unmatched_files: true
