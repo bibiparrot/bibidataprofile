@@ -1,0 +1,32 @@
+[package]
+name = "bibidataprofile"
+version = "0.2.2"
+description = "A native Tauri shell for marimo, managed by uv"
+authors = ["bibidataprofile contributors"]
+license = "Apache-2.0"
+repository = "https://github.com/bibiparrot/bibidataprofile"
+edition = "2024"
+rust-version = "1.85"
+
+[lib]
+name = "bibidataprofile_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.6.3", features = [] }
+
+[dependencies]
+dirs = "6.0"
+rust-i18n = "4.2.1"
+serde = { version = "1.0", features = ["derive"] }
+sys-locale = "0.3"
+tauri = { version = "2.11.5", features = [] }
+thiserror = "2.0"
+toml = "0.9"
+
+[lints.rust]
+unsafe_code = "warn"
+
+[lints.clippy]
+all = "warn"
+pedantic = "warn"

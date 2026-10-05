@@ -1,0 +1,15 @@
+./.venv/Scripts/python.exe -m ensurepip --upgrade
+# pip install qt5_applications
+./.venv/Lib/site-packages/qt5_applications/Qt/bin/designer.exe
+./.venv/Scripts/python.exe -m PyQt5.uic.pyuic src/bibidataprofile/mainwindow.ui -o src/bibidataprofile/mainwindow.py
+./.venv/Scripts/python.exe -m PyQt5.uic.pyuic src/bibidataprofile/mainwindow.ui -o src/bibidataprofile/mainwindow.py
+./.venv/Scripts/python.exe -m PyQt5.uic.pyuic src/bibidataprofile/mainwindowtabs.ui -o src/bibidataprofile/mainwindowtabs.py
+
+
+
+# pip install pyqt5-tools
+./.venv/Scripts/pip3 install pyqt5-tools
+./.venv/Scripts/qt5-tools designer
+./.venv/Scripts/pyqt5-tools designer
+./.venv/Scripts/python.exe -m PyQt5.uic.pyuic src/bibidataprofile/mainwindow.ui -o src/bibidataprofile/mainwindow.py
+./.venv/Scripts/python.exe -m PyQt5.uic.pyuic src/bibidataprofile/mainwindowtabs.ui -o src/bibidataprofile/mainwindowtabs.py

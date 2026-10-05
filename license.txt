@@ -1,0 +1,42 @@
+Freeware Software License
+
+Version 0.1.0, 202404
+
+1. Grant of License:
+   The licensor hereby grants you a non-exclusive, non-transferable license to use
+   the software named BibiDataProfile ("the Software") free of charge.
+   This license permits you to use, copy, and distribute the Software for personal, non-commercial use only.
+
+2. Redistribution:
+   You may redistribute verbatim copies of the Software as you receive it,
+   provided that you do not charge any fees for such copies and that this license notice is included in all copies or substantial portions of the Software.
+
+3. Modification:
+   You may not modify, adapt, translate, reverse engineer, decompile, or disassemble the Software except as permitted by applicable law.
+
+4. Ownership:
+   The licensor retains all rights, title, and interest in and to the Software, including all intellectual property rights therein.
+
+5. Warranty Disclaimer:
+   THE SOFTWARE IS PROVIDED "AS IS," WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+    INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
+    IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT,
+    OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+6. Limitation of Liability:
+   IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,
+   OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+   OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+   OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+   EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+7. Governing Law:
+   This License shall be governed by and construed in accordance with the laws of Chunqi SHI's jurisdiction,
+   without regard to its conflict of law provisions.
+
+8. Entire Agreement:
+   This License constitutes the entire agreement between the parties concerning the subject matter hereof
+   and supersedes all prior or contemporaneous agreements or understandings, written or oral, concerning such subject matter.
+
+Chunqi SHI
+chunqishi@gmail.com

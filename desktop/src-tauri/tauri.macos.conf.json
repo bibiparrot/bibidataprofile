@@ -1,0 +1,8 @@
+{
+  "bundle": {
+    "resources": {
+      "resources/runtime/libomp.dylib": "runtime/libomp.dylib",
+      "resources/runtime/libomp-LICENSE.txt": "licenses/libomp-LICENSE.txt"
+    }
+  }
+}

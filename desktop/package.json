@@ -1,0 +1,25 @@
+{
+  "name": "bibidataprofile",
+  "private": true,
+  "version": "0.2.2",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "sidecar": "node scripts/prepare-sidecar.mjs",
+    "portable": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/package-portable.ps1",
+    "tauri": "tauri",
+    "tauri:dev": "npm run application && npm run sidecar && tauri dev",
+    "tauri:build": "npm run application && npm run sidecar && tauri build",
+    "application": "node scripts/prepare-application.mjs"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.11.1"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.11.4",
+    "typescript": "^5.9.3",
+    "vite": "^8.2.2"
+  }
+}

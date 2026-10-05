@@ -1,0 +1,147 @@
+name: Build all desktop releases
+
+on:
+  workflow_dispatch:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+env:
+  UV_VERSION: "0.12.0"
+  UV_HTTP_TIMEOUT: "120"
+  UV_CONCURRENT_DOWNLOADS: "4"
+
+defaults:
+  run:
+    working-directory: desktop
+
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v7
+        with:
+          version: ${{ env.UV_VERSION }}
+      - name: Validate analysis workflows and marimo server
+        working-directory: .
+        run: |
+          uv venv --python 3.12
+          uv pip install ".[dev]"
+          .venv/bin/python -m pytest -q
+          .venv/bin/python -m marimo check src/bibidataprofile/marimo_app.py
+          .venv/bin/python scripts/smoke_server.py
+
+  build:
+    needs: test
+    name: ${{ matrix.name }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: Windows x86_64
+            os: windows-latest
+            target: x86_64-pc-windows-msvc
+          - name: macOS arm64
+            os: macos-15
+            target: aarch64-apple-darwin
+          - name: macOS x86_64
+            os: macos-15-intel
+            target: x86_64-apple-darwin
+          - name: Linux x86_64
+            os: ubuntu-22.04
+            target: x86_64-unknown-linux-gnu
+          - name: Linux aarch64
+            os: ubuntu-22.04-arm
+            target: aarch64-unknown-linux-gnu
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Linux runtime and build dependencies
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf libfuse2 libgomp1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: desktop/package-lock.json
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.target }}
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: desktop/src-tauri
+          key: ${{ matrix.target }}
+      - uses: astral-sh/setup-uv@v7
+        with:
+          version: ${{ env.UV_VERSION }}
+      - name: Prepare bundled macOS OpenMP runtime
+        if: runner.os == 'macOS'
+        run: bash scripts/prepare-macos-runtime.sh
+      - name: Install frontend and prepare embedded runtime
+        run: |
+          npm ci
+          npm run application
+          npm run sidecar
+        env:
+          TAURI_TARGET: ${{ matrix.target }}
+      - name: Test installed wheel on this architecture
+        shell: bash
+        run: |
+          uv venv ../.venv --python 3.12
+          PYTHON=../.venv/bin/python
+          if [ "${{ runner.os }}" = Windows ]; then PYTHON=../.venv/Scripts/python.exe; fi
+          uv pip install --python "$PYTHON" src-tauri/resources/*.whl pytest
+          export DYLD_LIBRARY_PATH="$PWD/src-tauri/resources/runtime${DYLD_LIBRARY_PATH:+:$DYLD_LIBRARY_PATH}"
+          cd ..
+          "$GITHUB_WORKSPACE/.venv/${PYTHON#../.venv/}" -m pytest -o pythonpath= -q
+      - name: Build native bundles
+        run: npm run tauri -- build --target ${{ matrix.target }}
+        env:
+          APPIMAGE_EXTRACT_AND_RUN: "1"
+      - name: Build Windows portable ZIP
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: ./scripts/package-portable.ps1 -TargetTriple '${{ matrix.target }}'
+      - name: Package release formats and validate payloads
+        shell: bash
+        run: uv run --no-project --python 3.12 ../scripts/package-release.py --target '${{ matrix.target }}'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: packages-${{ matrix.target }}
+          if-no-files-found: error
+          path: desktop/artifacts/release/*
+
+  publish:
+    needs: build
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: packages-*
+          merge-multiple: true
+          path: release-assets
+      - uses: astral-sh/setup-uv@v7
+        with:
+          version: ${{ env.UV_VERSION }}
+      - name: Build wheel and verify complete release inventory
+        working-directory: .
+        run: |
+          uv build --wheel --out-dir release-assets
+          uv run --no-project --python 3.12 scripts/verify-release.py release-assets
+      - uses: actions/upload-artifact@v4
+        with:
+          name: complete-release
+          path: release-assets/*
+      - name: Publish complete release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          body_path: docs/release-notes.md
+          files: release-assets/*
+          fail_on_unmatched_files: true

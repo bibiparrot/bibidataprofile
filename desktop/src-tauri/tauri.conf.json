@@ -1,0 +1,49 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "bibidataprofile",
+  "version": "0.2.2",
+  "identifier": "dev.bibiparrot.bibidataprofile",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "bibidataprofile",
+        "width": 1280,
+        "height": 820,
+        "minWidth": 860,
+        "minHeight": 600,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self' customprotocol: asset:; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' asset: http://127.0.0.1:* data: blob:; frame-src http://127.0.0.1:*; connect-src ipc: http://ipc.localhost http://127.0.0.1:* ws://127.0.0.1:*"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "resources": {
+      "../LICENSE": "licenses/bibimapy-LICENSE.txt",
+      "../UPSTREAM.md": "licenses/bibimapy-UPSTREAM.md"
+    },
+    "targets": "all",
+    "externalBin": [
+      "binaries/uv"
+    ],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "category": "DeveloperTool",
+    "shortDescription": "Data profiling and modeling with marimo",
+    "longDescription": "BibiDataProfile provides data import, EDA, optimal binning and LightGBM modeling in a bibimapy-based desktop shell."
+  }
+}

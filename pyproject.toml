@@ -1,0 +1,54 @@
+[project]
+name = "bibidataprofile"
+version = "0.2.2"
+description = "An Exploratory Data Analysis (EDA) tool named BibiDataProfile"
+authors = [
+    {name = "Chunqi SHI", email = "chunqishi@gmail.com"},
+]
+dependencies = [
+#    "catboost>=1.2.5",
+#    "chardet>=5.2.0",
+#    "tabulate>=0.9.0",
+    "loguru>=0.7.3",
+    "ydata-profiling>=4.12.2",
+    "pandas>=2.2.3",
+    "tables>=3.9.2",
+    "openpyxl>=3.1.5",
+    "optbinning>=0.20.1",
+    "lightgbm>=4.6.0",
+    "jieba>=0.42.1",
+    "marimo>=0.24.0,<0.25",
+    "scikit-learn>=1.6,<1.8",
+    "sqlalchemy>=2.0,<3",
+    "joblib>=1.4",
+    "matplotlib>=3.9",
+    "setuptools>=70,<81",
+    "python-calamine>=0.3.1",
+]
+requires-python = "==3.12.*"
+readme = "README.md"
+license = {text = "freeware"}
+
+[project.urls]
+Homepage = "https://github.com/bibiparrot/bibidataprofile"
+
+[project.scripts]
+bibidataprofile = "bibidataprofile.main:main"
+
+[project.optional-dependencies]
+legacy = ["pyqt5>=5.15.11"]
+dev = ["pytest>=8", "build>=1.2"]
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool.pdm]
+distribution = true
+
+[tool.pdm.build]
+includes = ["src/bibidataprofile"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
